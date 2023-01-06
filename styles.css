@@ -1,0 +1,107 @@
+*{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+body{
+    margin: 0px;
+}
+
+header{
+    margin: 0px;
+    background-color: #7BBC53;
+    color: black;
+    font-size: x-large;
+    font-weight: 550;
+    height: 80px;
+    display: grid;
+}
+
+.inic{
+    display: flex;
+    gap: 50px;
+    list-style: none;
+    margin: 0px;
+    padding: 25px 10px 10px 10px;
+}
+.head:nth-child(1){
+    margin: 0px 0px 0px 50px;
+}
+
+.head:nth-child(4){
+    margin: 0px 0px 0px 700px;
+}
+
+.head{
+    display: inline;
+}
+
+.cle{
+    text-decoration: none;
+    color: black;
+}
+
+.titulo{
+    display: inline;
+    color: #67C1EC;
+}
+.white{
+    color: black;
+    font-size: 40px;
+}
+
+.posicion{
+    padding: 50px 0px 0px 150px;
+}
+.submit{
+    background-color: #67C1EC;
+    border-radius: 5px;
+    border-width: 0.1px;
+    height: 30px;
+    font-size: 20px;
+}
+
+.sub{
+    padding-left: 150px;
+    display: flex;
+    flex-direction: row;
+}
+
+.imj{
+    visibility: hidden;
+}
+
+.cuerpo{
+    display: block;
+    border: 1px;
+    border-color: blueviolet;
+    position: absolute;
+    background-color: #7BBC53;
+}
+
+.hijito{
+    position: absolute;
+}
+
+.temp{
+    height: 50px;
+    width: 500px;
+    background-color: #FAB9AC;
+    margin: 35px 10px 0px 150px;
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+}
+
+.contenido_tareas{
+    margin: 0px;
+}
+
+.icon{
+    padding-left: 10px;
+}
+
+.txt{
+    color: black;
+    font-weight: 550;
+}
+
