@@ -18,48 +18,74 @@ const contenedor = document.querySelector(".cuerpo")
 
 function formulario()
 {
-      contenedor.innerHTML += `<div class="hijito">
-      <form class="cuerpo">
-      <fieldset>
-        <legend>Agregar recordatorio o tarea</legend>
-        <p>
-          <label for="size_1">titulo: <br></label>
-          <input type="text" id="size_1" placeholder="Max. 50 caracteres." maxlength="50" size="45">
-        </p>
-        <p>
-          <label for="size_1">Descripcion: <br></label>
-          <input type="text" id="size_2" placeholder="Max. 500 caracteres." maxlength="500" size="45">
-        </p>
-        <p>
-          <input type="button" id="juan" value="Agregar" id="botoncito" onclick="guardar()">
-        </p>
-      </fieldset>
-  </form>
-  </div>`
+      document.querySelector(".hijito").style.display = "block";
 }
 
 function guardar()
 {
-  let entrada = document.getElementById("size_2").value;
-  
-  let desc = []
-  console.log(entrada)
-  desc.push(entrada)
-  console.log(desc)
-  localStorage.setItem("desc", JSON.stringify(desc))
+  let titulo = document.getElementById("size_1").value;
+  let descrip = document.getElementById("size_2").value;
+
+  let headd = ({
+    "titulo": titulo,
+    "descrip": descrip
+  })
+
+ let formu = JSON.parse(localStorage.getItem('escrito')) ? JSON.parse(localStorage.getItem('escrito')) : []
+  console.log(headd)
+  formu.push(headd)
+  console.log(formu)
+  console.log(JSON.stringify(formu))
+  localStorage.setItem("escrito", JSON.stringify(formu))
+
+  document.getElementById("size_2").value = ''
+  document.getElementById("size_1").value = ''
+
   renderisar()
 }
 
 function renderisar()
 {
+  
+  console.log(localStorage.getItem('usuarios'))
   let agregarcont = document.getElementById("contenido_tareas")
-  let dc = JSON.parse(localStorage.getItem("desc"))
+  let formu = JSON.parse(localStorage.getItem('escrito')) ? JSON.parse(localStorage.getItem('escrito')) : 
+  []
+  agregarcont.innerHTML = ''
+  console.log(formu)
 
-  dc.forEach(element => {
-    document.querySelector(".temp").style.display = "none";
-    document.querySelector(".cuerpo").style.display ="none";
+  formu.forEach(element =>{
+    
     agregarcont.innerHTML += `
-    <p>${element}</p>`
-  });
+    <h3>${element.titulo}</h3>
+    <p>${element.descrip}</p>
+    <input type="button" value="borrar"  onclick="eliminar()" class="xddd">`
+    
+  })
+  ocultar();
+}
+
+renderisar()
+
+function eliminar(){
+  let agregarcont = document.getElementById("contenido_tareas")
+  let formu = JSON.parse(localStorage.getItem('escrito')) ? JSON.parse(localStorage.getItem('escrito')) : 
+  []
+  console.log(formu)
+  let eliminado = formu.splice(0, 1, ' ')
+ 
+ 
+  guardar()
+  console.log(formu)
+ 
+
+}
+
+
+
+function ocultar(){
+  document.querySelector(".hijito").style.display = "none";
+  document.getElementById("cud").reset()
+  
 }
 

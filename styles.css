@@ -80,6 +80,9 @@ header{
 
 .hijito{
     position: absolute;
+    display: none;
+    padding-left: 500px;
+    width: 1500px;
 }
 
 .temp{
@@ -105,3 +108,10 @@ header{
     font-weight: 550;
 }
 
+.cjng{
+    display: inline-block;
+}
+
+.lklk{
+    margin-left: 45px;
+}
