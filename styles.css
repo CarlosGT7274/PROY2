@@ -85,6 +85,13 @@ header{
     width: 1500px;
 }
 
+.hijote{
+    position: absolute;
+    display: none;
+    padding-left: 500px;
+    width: 1500px;
+}
+
 .temp{
     height: 50px;
     width: 500px;
