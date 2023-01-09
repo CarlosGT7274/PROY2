@@ -79,7 +79,7 @@ function renderisar() {
 
   formu.forEach((index) => {
     agregarcont.innerHTML += `
-    <div>
+    <div class="reg">
     <h3 id="editar" class="mismo">${index.titulo}</h3>
     <p class="mismo">${index.descrip}</p>
     <button onclick="eliminar(${index.id})" class="xddd">eliminar</button>
