@@ -8,8 +8,8 @@ body{
 
 header{
     margin: 0px;
-    background-color: #7BBC53;
-    color: black;
+    background-color: black;
+    color: white;
     font-size: x-large;
     font-weight: 550;
     height: 80px;
@@ -37,7 +37,7 @@ header{
 
 .cle{
     text-decoration: none;
-    color: black;
+    color: white;
 }
 
 .titulo{
@@ -53,7 +53,7 @@ header{
     padding: 50px 0px 0px 150px;
 }
 .submit{
-    background-color: #67C1EC;
+    background-color: #F9B630;
     border-radius: 5px;
     border-width: 0.1px;
     height: 30px;
@@ -121,4 +121,27 @@ header{
 
 .lklk{
     margin-left: 45px;
+}
+
+.klx{
+    display: inline;
+    width: 30px;
+}
+
+.foot{
+    display: flex;
+    gap: 25px;
+    margin: 0px 0px 0px 100px;
+    padding: 10px 0px 0px 0px;
+}
+
+footer{
+    margin: 120px 0px 0px 0px;
+    height: 172px;
+    background-color:#494953;
+}
+
+.cop{
+    margin: 0px 0px 0px 100px;
+    padding: 10px 0px 0px 0px;
 }
