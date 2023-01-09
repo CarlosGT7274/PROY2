@@ -25,8 +25,9 @@ function guardar()
 {
   let titulo = document.getElementById("size_1").value;
   let descrip = document.getElementById("size_2").value;
-
-  let headd = ({
+  
+  let headd = ({ 
+    id: Date.now(),
     "titulo": titulo,
     "descrip": descrip
   })
@@ -57,9 +58,9 @@ function renderisar()
   formu.forEach(element =>{
     
     agregarcont.innerHTML += `
-    <h3>${element.titulo}</h3>
-    <p>${element.descrip}</p>
-    <input type="button" value="borrar"  onclick="eliminar()" class="xddd">`
+    <h3 id="editar" class="mismo">${element.titulo}</h3>
+    <p class="mismo">${element.descrip}</p>
+    <input type="button" value="borrar"  onclick="eliminar(${element.id})" class="xddd">`
     
   })
   ocultar();
@@ -67,18 +68,25 @@ function renderisar()
 
 renderisar()
 
-function eliminar(){
-  let agregarcont = document.getElementById("contenido_tareas")
-  let formu = JSON.parse(localStorage.getItem('escrito')) ? JSON.parse(localStorage.getItem('escrito')) : 
-  []
-  console.log(formu)
-  let eliminado = formu.splice(0, 1, ' ')
- 
- 
-  guardar()
-  console.log(formu)
- 
+function eliminar(item){
+  
+let agregarcont = document.getElementById("contenido_tareas")
+const getdata = JSON.parse(localStorage.getItem('escrito'))
+let filterdata = getdata.filter(parametro => parametro.id!==Number(item))
+console.log(filterdata)
+localStorage.setItem("escrito", JSON.stringify(filterdata))
+renderisar()
 
+  //let formu = JSON.parse(localStorage.getItem('escrito')) ? JSON.parse(localStorage.getItem('escrito')) : 
+  //[]
+  //console.log(formu)
+//
+  //formu.splice(formu, 1)
+//
+  //localStorage.removeItem("escrito")
+//
+  //agregarcont.innerHTML = ''
+  //console.log(formu)
 }
 
 
@@ -88,4 +96,12 @@ function ocultar(){
   document.getElementById("cud").reset()
   
 }
+const valor =  document.querySelector(".mismo")
+console.log(valor)
 
+function seteditable(element){
+
+  edit.contentEditable = "true";
+  edit.setAttribute("contenteditable", "true")
+  console.log('editable')
+}
